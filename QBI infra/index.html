@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyCGQ9vD8waHzZbUYRM7KzlNUnqWZ0tOcr0",
+  authDomain: "social-auth-b2fd4.firebaseapp.com",
+  projectId: "social-auth-b2fd4",
+  storageBucket: "social-auth-b2fd4.appspot.com",
+  messagingSenderId: "607920028862",
+  appId: "1:607920028862:web:7b4d2b07c0c9bbe0f172ef",
+  measurementId: "G-ZENJKFKZE3"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <body>
+    <label>Email</label>
+    <input id="email" type="text" />
+    <label>Password</label>
+    <input id="password" type="password" />
+    <button onclick="login()">Login</button>
+  </body>
+  <script>
+    function login() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(document.getElementById("email").value, document.getElementById("password").value)
+        .catch(function (error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
+        });
+    }
+  </script>
+</html>
+view rawindex.html hosted with ❤ by GitHub
+
+
+
+
+
+<!--  
+{
+    "kind": "identitytoolkit#VerifyPasswordResponse",
+    "localId": "CMPQqrBoQpT0T9UmaWesob98jFz1",
+    "email": "test@test.com",
+    "displayName": "",
+    "idToken": "
+    eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhM2JkODk4ZGE1MGE4OWViOWUxY2YwYjdhN2VmZTM1OTNkNDEwNjgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc29jaWFsLWF1dGgtYjJmZDQiLCJhdWQiOiJzb2NpYWwtYXV0aC1iMmZkNCIsImF1dGhfdGltZSI6MTcwMjA0MTc4NywidXNlcl9pZCI6IkNNUFFxckJvUXBUMFQ5VW1hV2Vzb2I5OGpGejEiLCJzdWIiOiJDTVBRcXJCb1FwVDBUOVVtYVdlc29iOThqRnoxIiwiaWF0IjoxNzAyMDQxNzg3LCJleHAiOjE3MDIwNDUzODcsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0QHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.RbbBeMGylWJgnvzZnAk57lcvsiFmailOUd6P57_EL2P0TQkT_bSKvR8T2iYnD-aW_w5dNQIQUQFB2JYF8frCthaJ8KiAIcGZxYDzykO3hafxY7xOkuy9uJAIYlMp1vQ-XFIhd-S73Klggl_O7QllsB-pSPyh7FQzK38gVP-rhaOQM4_EKGllhdICofn3orfa0ev0dyVi2QZvrnQJYDYWdxk75HtWeHSX36E2K5yirkdhcYa_0h-9eLiwCnkkdPtmTiXO6M7_aTRjdVkvEpbaBATl8jR13sjsnjJLCRUJfNdBJr0PKJozJ1TMFY2Z4t99LYkP217MUzaJCds0G9m4AA
+    ",
+    "registered": true,
+    "refreshToken": "AMf-vBwga7gIlb6fDGQII2V6GW0DelO5NBlzBP1I2bxYK6y4mgKbXWmwDBltXPEIJ-U5YWCDAD8i5Areq21Kyo0FDGE4Uk1_ivmLvSe5iOLpArAa6sksv0vc__bRmjavPtamiM8zPjQ7lMWXpFwt6hEJGXdTzqCdUOIzDBKoOZt7PDMKPcd9kEYNM4VkQib-6zAghvKrJ7ahH2a5A9M_eN2iFL-mZrxBkQ",
+    "expiresIn": "3600"
+} -->
+
+

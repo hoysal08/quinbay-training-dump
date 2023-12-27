@@ -1,0 +1,39 @@
+.yellow-text {
+  color: yellow;
+}
+/* .hover-me{
+    color: aqua;
+} */
+.hover-me:link {
+  color: green;
+}
+.hover-me:visited {
+  color: blue;
+}
+.hover-me:hover {
+  color: brown;
+}
+
+.text-css {
+  text-align: justify;
+  width: 50%;
+  margin: 2%;
+  padding: 5%;
+  text-decoration: underline;
+  border: 2px solid black;
+}
+body {
+  background-color: blueviolet;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: pink;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 300px) {
+  body {
+    background-color: red;
+  }
+}

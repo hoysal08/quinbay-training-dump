@@ -1,0 +1,47 @@
+MONGO
+
+Queries
+1. db.movie.find({},{"_id":0,"reviews":0}).pretty();
+2. db.movie.find({"movie_rel_year":2020,"director_name":"yash"},{}).pretty();
+3.db.movie.distinct("reviews.reviewers_name");
+4. db.movie.find({ "movie_title": { $regex: '^.{2}a', $options: 'i' } }, { "movie_title": 1, _id: 0 });
+5. Not really possible, because each movie has director field
+6. db.movie.aggregate([
+    { $group: { _id: "$movie_rel_year", count: { $sum: 1 } } },
+]);
+7. db.movie.find({ "movie_title": "crazy" }, { "reviews.rev_stars": 1, _id: 0 });
+8. db.movie.aggregate([
+    { $unwind: "$reviews" },
+    { $group: { _id: "$movie_title", averageRating: { $avg: "$reviews.rev_stars" } } },
+    { $project: { movie_title: "$_id", _id: 0, averageRating: 1 } }
+]);
+9. db.movie.updateMany(
+    {}, 
+    { $set: { "reviews.$[].review": "Must Watch!" } }
+);
+10. db.movie.find({ "reviews.0": { $exists: true } }, { "movie_title": 1, _id: 0 });
+11. db.movie.createIndex({ "movie_title": 1, "movie_rel_year": 1 });
+12. db.movie.aggregate([
+    { $match: { "movie_rel_year": 2020 } },
+    { $sort: { "revenue_amount": -1 } },
+    { $limit: 1 },
+    { $project: { "movie_title": 1, _id: 0 } }
+]);
+13. db.movie.aggregate([
+    { $match: { "movie_rel_year": 2020 } },
+    { $group: { _id: "$movie_genres", totalRevenue: { $sum: "$revenue_amount" } } },
+    { $sort: { totalRevenue: -1 } }
+])
+
+
+Insert Template
+
+db.movie.insert({
+	"movie_id":2,
+	"movie_title":"abc",
+	"movie_rel_year":2010,
+	"movie_genres":"comedy",
+	"director_name":"bobby",
+	"reviews":[{"reviewers_name":"ranu","rev_stars":5}],
+	"revenue_amount":450000
+})

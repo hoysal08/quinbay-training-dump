@@ -1,0 +1,45 @@
+Create
+
+1. CREATE TABLE Director(dir_id int NOT NULL, dir_name varchar(255) NOT NULL, PRIMARY KEY (dir_id));
+2. CREATE TABLE Movie(movie_id int NOT NULL,movie_title varchar(255) NOT NULL UNIQUE, movie_rel_year int,movie_genres varchar(255), dir_id int , PRIMARY KEY(movie_id),FOREIGN KEY (movie_id) REFERENCES Director(dir_id));
+3. CREATE TABLE Reviewer(review_id int NOT NULL, review_name varchar(255),PRIMARY KEY(review_id));
+4. CREATE TABLE movie_rating(movie_id int, review_id int,rev_star int,FOREIGN KEY(movie_id) REFERENCES movie(movie_id),FOREIGN KEY(review_id) REFERENCES reviewer(review_id),CHECK(rev_star<=5 and rev_star>0));
+5.  CREATE TABLE movie_revenue(movie_id int,revenue_amount int, FOREIGN KEY(movie_id) REFERENCES movie(movie_id));
+
+ 
+ 
+Display movie details with director name.
+Dispaly movie details whose release year is 2020 and director is 'Yash'.
+Display distinct reviwer's.
+Get All movie name whose third character is a.
+List the name of the director who has not done any movie.
+Get count of movies by year.
+get all the movie rat_star for a movie.
+
+Get Avg of rating of all the movies.
+
+Add a new column in movie_rating named review with text datatype. (Add some reviews)
+
+Get all the movie rat_star for a movie whose has given a review as well.
+
+Create an Index on movie_title and movie_rel_year.
+
+Get the name of the movie who generated most revennue in the year 2020.
+
+get sum of the revenue for each genere for the year 2020.
+
+
+Query
+1. select * from movie m,director d where m.dir_id=d.dir_id; 
+2. select * from movie m,director d where m.dir_id=d.dir_id and d.dir_name='yash'; 
+3. select distinct(review_name) from reviewer;
+4. select * from movie where movie_title like '__a%';
+5.select distinct(dir_name) from director d, movie m where d.dir_id not in (Select dir_id from movie);
+6. select movie_rel_year,count(*) from movie group by (movie_rel_year);
+7. select * from movie_rating where movie_id=1;
+8. select movie_title,avg(rev_star) from movie m, movie_rating mr where m.movie_id=mr.movie_id group by (m.movie_id);
+9. ALTER TABLE movie_rating ADD COLUMN reviews varchar(255) DEFAULT 'must watch!';
+10. select distinct(movie_title) from movie m,movie_rating mr where mr.movie_id=m.movie_id;
+11. create INDEX idx_title ON movie(movie_title,movie_rel_year);
+12. select movie_title,revenue_amount from movie m, movie_revenue mr where m.movie_id= mr.movie_id and movie_rel_year=2020 order by (revenue_amount) desc limit 1 ;
+13. SELECT movie_genres,sum(revenue_amount) from movie m,movie_revenue mr where m.movie_id=mr.movie_id group by (m.movie_genres);

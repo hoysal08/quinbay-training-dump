@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Sooraj Hoysal - Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <h1>Sooraj Hoysal</h1>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hey!, I am Sooraj Hoysal. I completed my Bachelor's Degree in
+        Information Science and Enginnering from NMIT.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Blockchain</li>
+        <li>React</li>
+        <li>Java</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Pro Prompts</h3>
+        <p>AI Prompting sourcing Tool (LLM's)</p>
+        <a href="https://proprompts.vercel.app/" target="_blank">
+          <img src="assets/proprompts.png"  alt="Project 1 Image" />
+        </a>
+      </div>
+      <div class="project">
+        <h3>Netflix</h3>
+        <p>Your personalised Video Streaming Site</p>
+        <a href="https://netflix-ui-ql2a.onrender.com/" target="_blank">
+          <img src="assets/netflix.png" alt="Project 2 Image" />
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" />
+
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+        ></textarea>
+
+        <input type="submit" value="Send" />
+      </form>
+    </section>
+  </body>
+</html>

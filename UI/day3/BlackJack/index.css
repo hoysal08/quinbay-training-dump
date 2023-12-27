@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  font-family: "Lucida Sans", sans-serif;
+  background-color: #f7f5b2;
+}
+nav {
+  text-align: center;
+  background-color: #bad4f9;
+  padding: 2rem;
+  font-size: 1.6rem;
+}
+#card-el{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#maincnt {
+  text-align: center;
+  margin-top: 15%;
+}
+#maincnt * {
+  margin: 1rem auto;
+}
+
+#btn-grp * {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  margin: auto 0.5rem;
+  background-color: #5e89ef;
+  color: #f7f5b2;
+}
+
+footer {
+  position: absolute;
+  bottom: 1%;
+  text-align: center;
+  width: 100%;
+}
+.first-color {
+  background: #f7f5b2;
+}
+
+.second-color {
+  background: #bad4f9;
+}
+
+.third-color {
+  background: #5e89ef;
+}
+
+.fourth-color {
+  background: #352771;
+}
